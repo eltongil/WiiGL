@@ -1,0 +1,638 @@
+﻿<Window x:Name="JanelaMain" 
+        x:Class="WiiGL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="SharpGL WPF Application" Height="825" Width="1080" 
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF" SizeChanged="Window_SizeChanged_1"
+        StateChanged="JanelaMain_StateChanged_1" MinHeight="750" MinWidth="800">
+    <TabControl x:Name="tabs" HorizontalAlignment="Left" Height="784" VerticalAlignment="Top" Width="1050" Margin="10,5,0,0">
+        <TabItem x:Name="Tab_Pessoa" Header="Informações pessoais">
+            <TabControl x:Name="Tabs_Dados">
+                <TabItem x:Name="Tab_Dados_Pessoais" Header="Dados Básicos">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="108*"/>
+                            <ColumnDefinition Width="86*"/>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="82*"/>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="63*"/>
+                            <ColumnDefinition Width="47*"/>
+                            <ColumnDefinition Width="61*"/>
+                            <ColumnDefinition Width="16*"/>
+                            <ColumnDefinition Width="103*"/>
+                            <ColumnDefinition Width="95*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="29*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Nome: " Grid.Row="0" Grid.Column="0" />
+                        <TextBox x:Name="Ent_Nome" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" TextChanged="Ent_Nome_TextChanged_1"/>
+                        <Label Content="Profissão: " Grid.Row="0" Grid.Column="7" />
+                        <TextBox x:Name="Ent_Profissão" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="5" TextChanged="Ent_Profissão_TextChanged_1"/>
+                        <Label Content="Endereço: " Grid.Row="1" Grid.Column="0" />
+                        <TextBox x:Name="Ent_Endereço" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" TextChanged="Ent_Endereco_TextChanged_1"/>
+                        <Label Content="Número: " Grid.Row="1" Grid.Column="7" />
+                        <TextBox x:Name="Ent_Numero_Casa" Grid.Row="1" Grid.Column="8" TextChanged="Ent_Numero_Casa_TextChanged_1"/>
+                        <Label Content="Bairro: " Grid.Row="1" Grid.Column="9" />
+                        <TextBox x:Name="Ent_Bairro" Grid.Row="1" Grid.Column="10" Grid.ColumnSpan="3" TextChanged="Ent_Bairro_TextChanged_1"/>
+                        <Label Content="Cidade: " Grid.Row="2" Grid.Column="0" />
+                        <TextBox x:Name="Ent_Cidade" Grid.Row="2" Grid.Column="1" TextChanged="Ent_Cidade_TextChanged_1"/>
+                        <Label Content="Telefone: " Grid.Row="2" Grid.Column="2"/>
+                        <TextBox x:Name="Ent_Numero_Telefone" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" TextChanged="Ent_Telefone_TextChanged_1"/>
+                        <Label Content="Celular: " Grid.Row="2" Grid.Column="5"/>
+                        <TextBox x:Name="Ent_Numero_Celular" Grid.Row="2" Grid.Column="6" TextChanged="Ent_Celular_TextChanged_1"/>
+                        <Label Content="Protocolo: " Grid.Row="2" Grid.Column="7"  />
+                        <TextBox x:Name="Ent_Protocolo" Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="5" TextChanged="Ent_Protocolo_TextChanged_1"/>
+                        <Label Content="Avaliador: " Grid.Row="3" Grid.Column="0" />
+                        <TextBox x:Name="Ent_Avaliador" Grid.Row="3" Grid.Column="1" TextChanged="Ent_Avaliador_TextChanged_1"/>
+                        <Label Content="Data de Avaliação: " Grid.Row="3" Grid.Column="2" />
+                        <DatePicker x:Name="Ent_Data_Avaliacao" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" SelectedDateChanged="Ent_Data_Avaliacao_SelectedDateChanged_1"/>
+                        <Label Content="Nascimento: " Grid.Row="3" Grid.Column="5" />
+                        <DatePicker x:Name="Ent_Data_Nascimento" Grid.Row="3" Grid.Column="6" SelectedDateChanged="Ent_Data_Nascimento_SelectedDateChanged_1"/>
+                        <Label Content="Idade: " Grid.Row="3" Grid.Column="7"/>
+                        <Label x:Name="Sai_Idade" Grid.Row="3" Grid.Column="8"/>
+                        <Label Content="Genero" Grid.Row="3" Grid.Column="9"/>
+                        <ComboBox x:Name="Ent_Genero" Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="3" SelectionChanged="Ent_Genero_Selected_1">
+                            <ComboBoxItem Content="Masculino"/>
+                            <ComboBoxItem Content="Feminino"/>
+                        </ComboBox>
+                        <Label Content="Cor/Raça" Grid.Row="4" Grid.Column="0"/>
+                        <ComboBox x:Name="Ent_Raca" Grid.Row="4" Grid.Column="1" Loaded="Ent_Raca_Loaded_1"/>
+                        <Label Content="Estado Cívil" Grid.Row="4" Grid.Column="2"/>
+                        <ComboBox x:Name="Ent_Civil" Grid.Row="4" Grid.Column="3" Loaded="Ent_Civil_Loaded_1" Grid.ColumnSpan="2"/>
+                        <Label Content="Escolaridade" Grid.Row="4" Grid.Column="5"/>
+                        <ComboBox x:Name="Ent_Educacao" Grid.Row="4" Grid.Column="6" Loaded="Ent_Educacao_Loaded_1"/>
+                        <Label Content="Arranjo de moradia: " Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="3" Margin="0,0,52,0"/>
+                        <TextBox x:Name="Ent_Moradia" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Margin="14,0,0,0"  />
+                        <Label Content="Hipóteses Diagnósticas : " Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Ent_Hipoteses_Diagnósticas" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="12" Margin="45,0,0,0" TextChanged="Ent_Hipoteses_Diagnósticas_TextChanged_1"/>
+                        <Label Content="Medicamentos: " Grid.Row="6" Grid.Column="0" />
+                        <Label x:Name="Total_Medicamentos" Grid.Row="6" Grid.Column="10" Content="Total: " Grid.ColumnSpan="3"/>
+                        <TextBox x:Name="Ent_Medicamentos" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="9" Text="Cada medicamento deve ser seguido de ponto e vírgula ;" TextChanged="Ent_Medicamentos_TextChanged_1"/>
+                        <Label Content="No último ano: " Grid.Row="7" Grid.Column="0"/>
+                        <CheckBox x:Name="Ent_Hospitalizacao_UA" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Content="Hospitalização" Margin="0,5" Height="16" Click="Ent_Hospitalizacao_UA_Click_1"/>
+                        <CheckBox x:Name="Ent_Cirurgia_UA" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" Content="Cirurgia" Margin="0,5" Height="16" Click="Ent_Cirurgia_UA_Click_1"/>
+                        <Label Content="Possui histórico de: " Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2"/>
+                        <CheckBox x:Name="Ent_Etilismo" Grid.Row="7" Grid.Column="5" VerticalAlignment="Center" Content="Etilismo" Margin="0,5" Height="16" Click="Ent_Etilismo_Click_1"/>
+                        <CheckBox x:Name="Ent_Tabagismo" Grid.Row="7" Grid.Column="6" VerticalAlignment="Center" Content="Tabagismo" Margin="0,5" Height="16" Click="Ent_Tabagismo_Click_1"/>
+                        <CheckBox x:Name="Ent_Atividade_Fisica" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="3" VerticalAlignment="Center" Content="Pratica atividade física" Margin="0,5" Height="16" Click="Ent_Atividade_Fisica_Click_1"/>
+                        <Label Content="Autoavaliação: " Grid.Row="8" Grid.Column="0"/>
+                        <Label Content="Saúde" Grid.Row="8" Grid.Column="1" Margin="64,0,0,0"/>
+                        <ComboBox x:Name="Ent_Avalia_Saude" Grid.Row="8" Grid.Column="2" Loaded="Ent_Avaliacao" SelectionChanged="Ent_Avalia_Saude_SelectionChanged"/>
+                        <Label Content="Visão" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2"/>
+                        <ComboBox x:Name="Ent_Avalia_Visão" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Loaded="Ent_Avaliacao" SelectionChanged="Ent_Avalia_Visao_SelectionChanged" />
+                        <Label Content="Audição" Grid.Row="8" Grid.Column="6"/>
+                        <ComboBox x:Name="Ent_Avalia_Audicao" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="2" Loaded="Ent_Avaliacao" Margin="71,0,0,0" SelectionChanged="Ent_Avalia_Audicao_SelectionChanged"/>
+                        <CheckBox x:Name="Ent_Sente_Dor" Grid.Row="8" Grid.Column="8" Content="Sente dor?" VerticalAlignment="Center"   Margin="10,5,0,5" Height="16" Grid.ColumnSpan="2" Click="Ent_Sente_Dor_Click"/>
+                        <Label Content="EVA da dor:" Grid.Row="8" Grid.Column="10" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Ent_Grau_Dor" Grid.Row="8" Grid.Column="12" PreviewTextInput="So_Numeros" TextChanged="Ent_Grau_Dor_TextChanged"/>
+                        <Label Content="Locomoção" Grid.Row="9" Grid.Column="0"/>
+                        <ComboBox x:Name="Ent_Locomocao" Grid.Row="9" Grid.Column="1" Loaded="Ent_Classificacao" SelectionChanged="Ent_Locomocao_SelectionChanged"/>
+                        <Label Content="Transporte" Grid.Row="9" Grid.Column="2"/>
+                        <ComboBox x:Name="Ent_Transporte" Grid.Row="9" Grid.Column="3" Loaded="Ent_Classificacao" Grid.ColumnSpan="2" SelectionChanged="Ent_Transporte_SelectionChanged"/>
+                        <Label Content="Dispositivo de auxílio de locomoção:" Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Ent_Dispositivo_Auxilio" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="3" TextChanged="Ent_Dispositivo_Auxilio_TextChanged"/>
+                        <CheckBox x:Name="Ent_Quedas" Content="Apresenta Quedas" Grid.Row="9" Grid.Column="10" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="16" Margin="0,5,0,6" Click="Ent_Quedas_Click"/>
+                        <CheckBox x:Name="Ent_Medo_de_Cair" Content="Medo de cair" Grid.Row="9" Grid.Column="12" VerticalAlignment="Center" Margin="0,5" Click="Ent_Medo_de_Cair_Click"/>
+                        <Label Content="Capacidade Funcional - BOMFAQ" FontWeight="Bold" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Label Content="Pontuação: 0" x:Name="Sai_BOMFAQ_Pontos" Grid.Row="10" Grid.Column="2"/>
+                        <Label Content="Sem Comprometimentos" x:Name="Sai_CF_avaliar" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="3"/>                            
+                        <CheckBox x:Name="Ent_CF_0" Content="Deitar/Levantar da cama" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="0,4,50,7"  Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_1" Content="Comer" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Margin="82,4,90,7" Grid.ColumnSpan="2" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_2" Content="Pentear o cabelo" Grid.Row="11" Grid.Column="2" VerticalAlignment="Center" Margin="23,4,56,7" Grid.ColumnSpan="2" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_3" Content="Andar no plano" Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="35,4,52,7" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_4" Content="Tomar banho" Grid.Row="11" Grid.Column="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="35,4,0,6" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_5" Content="Ir ao banheiro a tempo" Grid.Row="11" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="50,4,0,6" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_6" Content="Vestir-se" Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5,4,0,6" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_7" Content="Subir escadas" Grid.Row="11" Grid.Column="9" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="30,4,0,6" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_8" Content="Medicar-se na hora" Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="48,4,0,6" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_9" Content="Andar perto de casa" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="0,6,87,4" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_10" Content="Cortar as unhas dos pés" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="45,6,0,4" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_11" Content="Fazer Compras" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="73,6,0,4" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_12" Content="Preparar refeições" Grid.Row="12" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="71,6,0,4" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_13" Content="Sair da condução" Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5,6,0,4" Click="Ent_CF_Click"/>
+                        <CheckBox x:Name="Ent_CF_14" Content="Fazer a limpeza da casa" Grid.Row="12" Grid.Column="7" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="5,6,0,4" Click="Ent_CF_Click"/>
+                        <Label Content="Sobre a última queda (nos últimos 6 meses)" FontWeight="Bold" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Label Content="Ambiente:" Grid.Row="13" Grid.Column="2" Margin="39,0,0,0"/>
+                        <ComboBox x:Name="Ent_UQ_Ambiente" Grid.Row="13" Grid.Column="3" SelectionChanged="Ent_UQ_Queda_SelectionChanged">
+                            <ComboBoxItem Content="Externo"/>
+                            <ComboBoxItem Content="Interno"/>
+                        </ComboBox>
+                        <CheckBox x:Name="Ent_UQ_Ajuda" Content="Precisou de ajuda" Grid.Row="13" Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="5,5,0,5" Click="Ent_UQ_Ajuda_Click"/>
+                        <CheckBox x:Name="Ent_UQ_Lesao" Content="Houve lesão" Grid.Row="13" Grid.Column="6" VerticalAlignment="Center" Margin="21,5,0,5" Click="Ent_UQ_Lesao_Click"/>
+                        <Label Content="Mecanismo de queda:" Grid.Row="13" Grid.Column="7" Grid.ColumnSpan="3"/>
+                        <TextBox x:Name="Ent_UQ_Mecanismo" Grid.Row="13" Grid.Column="9"   Margin="30,0,0,0" TextChanged="Ent_UQ_Mecanismo_TextChanged" Grid.ColumnSpan="4"/>
+                        <Label Content="Circunstância da queda:" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="Ent_UQ_Circunstancia" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="9" Margin="45,0,0,0" TextChanged="Ent_UQ_Circunstancia_TextChanged"/>
+                        <Label Content="Outras quedas:" Grid.Row="14" Grid.Column="11"/>
+                        <xctk:IntegerUpDown x:Name="Ent_UQ_Outras" Grid.Row="14" Grid.Column="12" Margin="0,0,39,0" ValueChanged="Ent_UQ_Outras_ValueChanged"/>
+                        <Label Content="Sobre Tontura" Grid.Row="15" Grid.Column="0"/>
+                        <CheckBox x:Name="Ent_ST_Existe" Grid.Row="15" Grid.Column="1" VerticalAlignment="Center" Content="Exite Tontura" Margin="0,5" Click="Ent_ST_Existe_Click" Loaded="Ent_ST_Existe_Load"/>
+                        <Label Content="Tipo:" Grid.Row="15" Grid.Column="2"/>
+                        <ComboBox x:Name="Ent_ST_Tipo" Grid.Row="15" Grid.Column="2" Grid.ColumnSpan="2" Margin="39,0,0,0" Loaded="Ent_ST_Tipo_Loaded_1" SelectionChanged="Ent_ST_Tipo_SelectionChanged"/>
+                        <Label Content="EVA da tontura: " Grid.Row="15" Grid.Column="4" Grid.ColumnSpan="2"/>
+                        <xctk:IntegerUpDown x:Name="Ent_ST_EVA" Grid.Row="15" Grid.Column="6" Margin="0,0,72,0" ValueChanged="Ent_ST_EVA_ValueChanged_1"/>
+                        <Label Content="Periodicidade (meses): " Grid.Row="15" Grid.Column="6" Grid.ColumnSpan="2" Margin="60,0,0,0"/>
+                        <xctk:IntegerUpDown x:Name="Ent_ST_Periodicidade" Grid.Row="15" Grid.Column="8" Margin="5,0,47,0" ValueChanged="Ent_ST_Periodicidade_TextChanged"  Grid.ColumnSpan="2"/>
+                        <Label Content="Fatores desencadeadores de Tontura: "  Grid.Row="16" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                        <CheckBox x:Name="Ent_ST_0" Content="Levantando da posição deitada" Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="0,4,0,7"  Click="Ent_ST_Click" HorizontalAlignment="Right" Width="217"/>
+                        <CheckBox x:Name="Ent_ST_1" Content="Virando a cabeça" Grid.Row="17" Grid.Column="1" VerticalAlignment="Center" Margin="101,4,0,6" Grid.ColumnSpan="2" Click="Ent_ST_Click"/>
+                        <CheckBox x:Name="Ent_ST_2" Content="Virando o corpo" Grid.Row="17" Grid.Column="2" VerticalAlignment="Center" Margin="93,4,0,6" Grid.ColumnSpan="3" Click="Ent_ST_Click"/>
+                        <CheckBox x:Name="Ent_ST_3" Content="Levantando da posição sentada" Grid.Row="17" Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="10,4,0,6" Click="Ent_ST_Click"/>
+                        <CheckBox x:Name="Ent_ST_4" Content="Andando" Grid.Row="17" Grid.Column="6" VerticalAlignment="Center" Margin="98,4,10,6" Click="Ent_ST_Click" Grid.ColumnSpan="2"/>
+                        <CheckBox x:Name="Ent_ST_5" Content="Ansiedade" Grid.Row="17" Grid.Column="7" VerticalAlignment="Center" Margin="43,4,47,6" Click="Ent_ST_Click" Grid.ColumnSpan="3"/>
+                        <CheckBox x:Name="Ent_ST_6" Content="Cabeça e posição específica" Grid.Row="17" Grid.Column="9" VerticalAlignment="Center" Margin="14,4,0,6" Click="Ent_ST_Click" Grid.ColumnSpan="3"/>
+                        <CheckBox x:Name="Ent_ST_7" Content="Sentado Parado" Grid.Row="18" Grid.Column="6" VerticalAlignment="Center" Click="Ent_ST_Click" Margin="60,4,10,4" Height="18" Grid.ColumnSpan="2"/>
+                        <CheckBox x:Name="Ent_ST_8" Content="Mudando de posição na cama" Grid.Row="18" Grid.Column="0"  Grid.ColumnSpan="2"  VerticalAlignment="Center" Click="Ent_ST_Click" Margin="0,4,0,6"/>
+                        <CheckBox x:Name="Ent_ST_9" Content="Durante exercício" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="101,6,0,4" Click="Ent_ST_Click"/>
+                        <CheckBox x:Name="Ent_ST_10" Content="Deitado de um lado" Grid.Row="18" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" Click="Ent_ST_Click" Margin="93,4,0,6"/>
+                        <CheckBox x:Name="Ent_ST_11" Content="Depois da refeição" Grid.Row="18" Grid.Column="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Click="Ent_ST_Click" Margin="10,4,0,6" />
+                        <Label Content="Dados Pisco-Cognitivos (MEEM)" FontWeight="Bold" Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Label Content="Orientação" Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="2" Margin="122,0,0,0"/>
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_0" Grid.Row="19" Grid.Column="2" VerticalAlignment="Stretch" Margin="63,0,0,0" ValueChanged="Ent_DPC_MEEM_ValueChanged" Minimum="0"/>
+                        <Label Content="Repetição" Grid.Row="19" Grid.Column="3"/>
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_1" Grid.Row="19" Grid.Column="3" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Margin="71,0,0,0" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Memória Imediata" Grid.Row="19" Grid.Column="5" Grid.ColumnSpan="2"/>
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_2" Grid.Row="19" Grid.Column="6" VerticalAlignment="Stretch" Margin="27,0,61,0" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Comando em 3 estágios" Grid.Row="19" Grid.Column="6" Grid.ColumnSpan="3" Margin="71,0,28,0"/>
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_3" Grid.Row="19" Grid.Column="8" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="37" Grid.ColumnSpan="2" Margin="0,0,47,0" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Cálculo/Soletração" Grid.Row="19" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="161"/>
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_4" Grid.Row="19" Grid.Column="11" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="45" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Leitura" Grid.Row="20" Grid.Column="0" HorizontalAlignment="Stretch" />
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_5" Grid.Row="20" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="45" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Evocação" Grid.Row="20" Grid.Column="1" HorizontalAlignment="Stretch" />
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_6" Grid.Row="20" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="53" Margin="0,0,10,0" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Escrita" Grid.Row="20" Grid.Column="2" HorizontalAlignment="Left" />
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_7" Grid.Row="20" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="45" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Nomeação" Grid.Row="20" Grid.Column="3" HorizontalAlignment="Left" />
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_8" Grid.Row="20" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="39" Grid.ColumnSpan="2" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label Content="Cópia de desenho" Grid.Row="20" Grid.Column="5" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Margin="0,0,100,0" />
+                        <xctk:IntegerUpDown x:Name="Ent_DPC_MEEM_9" Grid.Row="20" Grid.Column="6" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="39" Margin="0,0,61,0" ValueChanged="Ent_DPC_MEEM_ValueChanged"  Minimum="0"/>
+                        <Label x:Name="Sai_MEEM_Pontos" Content="Pontos." Grid.Row="20" Grid.Column="7" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0" Width="100"/>                        
+                        <Label Content="Dados Pisco-Cognitivos (EDGA)" FontWeight="Bold" Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Grid Grid.Row="21" Grid.RowSpan="2" Grid.ColumnSpan="10" Grid.Column="1" Margin="101,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="38*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="26*"/>
+                                <RowDefinition Height="26*"/>
+                            </Grid.RowDefinitions>
+                            <CheckBox x:Name="Ent_DPC_EDGA_0" Grid.Row="0" Content="1" Click="Ent_DPC_EDGA_Click" Grid.Column="0" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_1" Grid.Row="0" Content="2" Click="Ent_DPC_EDGA_Click" Grid.Column="1" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_2" Grid.Row="0" Content="3" Click="Ent_DPC_EDGA_Click" Grid.Column="2" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_3" Grid.Row="0" Content="4" Click="Ent_DPC_EDGA_Click" Grid.Column="3" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_4" Grid.Row="0" Content="5" Click="Ent_DPC_EDGA_Click" Grid.Column="4" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_5" Grid.Row="0" Content="6" Click="Ent_DPC_EDGA_Click" Grid.Column="5" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_6" Grid.Row="0" Content="7" Click="Ent_DPC_EDGA_Click" Grid.Column="6" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_7" Grid.Row="0" Content="8" Click="Ent_DPC_EDGA_Click" Grid.Column="7" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_8" Grid.Row="0" Content="9" Click="Ent_DPC_EDGA_Click" Grid.Column="8" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_9" Grid.Row="0" Content="10" Click="Ent_DPC_EDGA_Click" Grid.Column="9" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_10" Grid.Row="0" Content="11" Click="Ent_DPC_EDGA_Click" Grid.Column="10" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_11" Grid.Row="0" Content="12" Click="Ent_DPC_EDGA_Click" Grid.Column="11" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_12" Grid.Row="0" Content="13" Click="Ent_DPC_EDGA_Click" Grid.Column="12" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_13" Grid.Row="0" Content="14" Click="Ent_DPC_EDGA_Click" Grid.Column="13" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_14" Grid.Row="0" Content="15" Click="Ent_DPC_EDGA_Click" Grid.Column="14" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_15" Grid.Row="1" Content="16" Click="Ent_DPC_EDGA_Click" Grid.Column="0" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_16" Grid.Row="1" Content="17" Click="Ent_DPC_EDGA_Click" Grid.Column="1" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_17" Grid.Row="1" Content="18" Click="Ent_DPC_EDGA_Click" Grid.Column="2" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_18" Grid.Row="1" Content="19" Click="Ent_DPC_EDGA_Click" Grid.Column="3" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_19" Grid.Row="1" Content="20" Click="Ent_DPC_EDGA_Click" Grid.Column="4" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_20" Grid.Row="1" Content="21" Click="Ent_DPC_EDGA_Click" Grid.Column="5" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_21" Grid.Row="1" Content="22" Click="Ent_DPC_EDGA_Click" Grid.Column="6" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_22" Grid.Row="1" Content="23" Click="Ent_DPC_EDGA_Click" Grid.Column="7" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_23" Grid.Row="1" Content="24" Click="Ent_DPC_EDGA_Click" Grid.Column="8" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_24" Grid.Row="1" Content="25" Click="Ent_DPC_EDGA_Click" Grid.Column="9" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_25" Grid.Row="1" Content="26" Click="Ent_DPC_EDGA_Click" Grid.Column="10" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_26" Grid.Row="1" Content="27" Click="Ent_DPC_EDGA_Click" Grid.Column="11" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_27" Grid.Row="1" Content="28" Click="Ent_DPC_EDGA_Click" Grid.Column="12" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_28" Grid.Row="1" Content="29" Click="Ent_DPC_EDGA_Click" Grid.Column="13" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="Ent_DPC_EDGA_29" Grid.Row="1" Content="30" Click="Ent_DPC_EDGA_Click" Grid.Column="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Label x:Name="Sai_GDS_Pontos" Content ="Pontos GDS: " Grid.Row="21" Grid.Column="11"/>
+                        <Label x:Name="Sai_GDS_Categoria" Content="Normal" Grid.Row="22" Grid.Column="11" Grid.ColumnSpan="2"/>     
+                        <Button x:Name="Salvar" Grid.Row="24" Grid.Column="3" Grid.ColumnSpan="3" Content="Salvar alterações" Click="Salvar_Paciente"/>
+                    </Grid>                    
+                </TabItem>
+                <TabItem Header="Testes funcionais"> 
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="57*"/>
+                            <ColumnDefinition Width="91*"/>
+                            <ColumnDefinition Width="61*"/>
+                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="168*"/>
+                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="368*"/>
+                            <ColumnDefinition Width="48*"/>
+                            <ColumnDefinition Width="72*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="28*"/>
+                            <RowDefinition Height="27*"/>
+                            <RowDefinition Height="106*"/>
+                            <RowDefinition Height="32*"/>
+                            <RowDefinition Height="275*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="TUGT" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Grid.ColumnSpan="10" />
+                        <Label Content="Tempo Gasto" Grid.Row="0" Grid.Column="1"/>
+                        <xctk:DecimalUpDown x:Name="Ent_TUGT_Tempo" ValueChanged="Ent_TUGT_Tempo_ValueChanged" Minimum="0.1" Grid.Row="0" Grid.Column="2"/>
+                        <Label x:Name="Sai_TUGT_Risco" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="7"/>
+                        <Label Content="BBS" Grid.Column="0" FontWeight="Bold" Grid.Row="1" />
+                        <Grid Grid.ColumnSpan="10" Margin="36,0,0,0" Grid.Row="1" Grid.RowSpan="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="247*"/>
+                                <ColumnDefinition Width="48*"/>
+                                <ColumnDefinition Width="651*"/>
+                                <ColumnDefinition Width="48*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="28*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Posição sentada para posição em pé" Grid.Row="0" Grid.Column="0"/>
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_0" ValueChanged="Ent_BBS_ValueChanged" Minimum="0" Maximum="4" Grid.Row="0" Grid.Column="1" />
+                            <Label Content="Permanecer em pé sem apoio" Grid.Row="1" Grid.Column="0"/>
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_1" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="1" Grid.Column="1"/>
+                            <Label Content="Permanecer sentado sem apoio nas costas mas com os pés apoiados no chão ou num banquinho" Grid.Row="5" Grid.Column="2"/>
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_2" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="5" Grid.Column="3" />
+                            <Label Content="Posição em pé para posição sentada" Grid.Column="0" Grid.Row="2"/>
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_3" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="2" Grid.Column="1" />
+                            <Label Content="Transferências" Grid.Row="3" Grid.Column="0" />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_4" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="3" Grid.Column="1" />
+                            <Label Content="Permanecer em pé sem apoio com os olhos fechados" Grid.Row="4" Grid.Column="2"  />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_5" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="4" Grid.Column="3"/>
+                            <Label Content="Permanecer em pé sem apoio com os pés juntos" Grid.Column="2" Grid.Row="0"  />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_6" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="0" Grid.Column="3" />
+                            <Label Content="Alcançar a frente com o braço estendido permancendo em pé" Grid.Row="1" Grid.Column="2"  />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_7" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="1" Grid.Column="3" />
+                            <Label Content="Pegar um objeto dochão a partir de uma posição em pé" Grid.Column="2" Grid.Row="2"   />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_8" ValueChanged="Ent_BBS_ValueChanged" Minimum="0" Maximum="4" Grid.Row="2" Grid.Column="3" />
+                            <Label Content="Virar-se e olhar para tás por cima dos ombros direito e esquerdo enquanto permanece em pé" Grid.Row="3" Grid.Column="2"  />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_9" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="3" Grid.Column="3" />
+                            <Label Content="Girar 360º" Grid.Row="6" Grid.Column="0"  />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_10" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="6" Grid.Column="1" />
+                            <Label Content="Posicionar os pés aleternadamente do degrau ou banquinho enquanto permanece em pé sem apoio" Grid.Column="2" Grid.Row="6"   />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_11" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="6" Grid.Column="3" />
+                            <Label Content="Permanece em pé sem apoio" Grid.Row="5" Grid.Column="0" />
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_12" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="5" Grid.Column="1" />
+                            <Label Content="Permanece em pé sobre uma perna" Grid.Row="4" Grid.Column="0"/>
+                            <xctk:IntegerUpDown x:Name="Ent_BBS_13" ValueChanged="Ent_BBS_ValueChanged"  Minimum="0" Maximum="4" Grid.Row="4" Grid.Column="1" />
+                        </Grid>
+                        <Label x:Name="Sai_BBS_Pontos" Content="BSS: ____ Pontos"  Grid.Row="8" Grid.ColumnSpan="2" />
+                        <Label x:Name="Sai_BBS_Categoria" Grid.Row="8" Grid.Column="2"  />
+                        <Grid Grid.Row="9" Grid.ColumnSpan="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="52*"/>
+                                <ColumnDefinition Width="103*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="52*"/>
+                                <ColumnDefinition Width="103*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="52*"/>
+                                <ColumnDefinition Width="103*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="52*"/>
+                                <ColumnDefinition Width="103*"/>                                                             
+                            </Grid.ColumnDefinitions>
+                            <Label Content="CTSIB" Grid.Column="0" FontWeight="Bold" Grid.ColumnSpan="5"/>
+                            <Label Content="OA SF:" Grid.Column="1" />
+                            <xctk:IntegerUpDown x:Name="Ent_CTSIB_0" Grid.Column="2" ValueChanged="Ent_CTSIB_ValueChanged"/>
+                            <Label x:Name="Sai_CTSIB_0" Grid.Column="3"/>
+                            <Label Content="OA SI:" Grid.Column="4" />
+                            <xctk:IntegerUpDown x:Name="Ent_CTSIB_1" Grid.Column="5" ValueChanged="Ent_CTSIB_ValueChanged"/>
+                            <Label x:Name="Sai_CTSIB_1" Grid.Column="6"/>
+                            <Label Content="OF SF:" Grid.Column="7" />
+                            <xctk:IntegerUpDown x:Name="Ent_CTSIB_2" Grid.Column="8" ValueChanged="Ent_CTSIB_ValueChanged"/>
+                            <Label x:Name="Sai_CTSIB_2" Grid.Column="9"/>
+                            <Label Content="OF SI:" Grid.Column="10" />
+                            <xctk:IntegerUpDown x:Name="Ent_CTSIB_3" Grid.Column="11" ValueChanged="Ent_CTSIB_ValueChanged"/>
+                            <Label x:Name="Sai_CTSIB_3" Grid.Column="12"/>
+                        </Grid>  
+                        <Label Content="DGI" FontWeight="Bold" Grid.Row="10"/>
+                        <Label x:Name="Sai_DGI_Pontos" Grid.Column="1" Grid.Row="10"/>
+                        <Label x:Name="Sai_DGI_Categoria" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3"/>
+                        <Grid Grid.Row="11" Grid.ColumnSpan="10" Margin="0,0,0,39">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="31*"/>
+                                <RowDefinition Height="31*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="188*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="232*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="104*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="286*"/>
+                                <ColumnDefinition Width="55*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Superfície nivelada para marcha" Grid.Row="0" Grid.Column="0"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_0" Grid.Row="0" Grid.Column="1" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Mudanças de velocidade marcha" Grid.Row="1" Grid.Column="0"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_1" Grid.Row="1" Grid.Column="1" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Marcha e rotação" Grid.Row="0" Grid.Column="4"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_2" Grid.Row="0" Grid.Column="3" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Passar por cima de um obstáculo" Grid.Row="1" Grid.Column="6"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_3" Grid.Row="1" Grid.Column="3" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Marcha com rotação horizontal da cabeça" Grid.Row="0" Grid.Column="6"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_4" Grid.Row="0" Grid.Column="5" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Marcha com rotação vertical da cabeça" Grid.Row="1" Grid.Column="2"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_5" Grid.Row="1" Grid.Column="5" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Andar ao redor de obstáculos" Grid.Row="0" Grid.Column="2"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_6" Grid.Row="0" Grid.Column="7" ValueChanged="Ent_DGI_ValueChanged"/>
+                            <Label Content="Degraus" Grid.Row="1" Grid.Column="4"/>
+                            <xctk:IntegerUpDown x:Name="Ent_DGI_7" Grid.Row="1" Grid.Column="7" ValueChanged="Ent_DGI_ValueChanged"/>
+                        </Grid>
+                        <Button x:Name="Salvar2" Grid.Row="12" Grid.Column="5" Grid.ColumnSpan="2" Content="Salvar alterações" Click="Salvar_Paciente"/>
+                    </Grid>                    
+                </TabItem>
+                <TabItem Header="Abrir/Editar">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="223*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="161*"/>
+                            <ColumnDefinition Width="168*"/>
+                            <ColumnDefinition Width="701*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Selecionar paciente" Grid.Row="0" Grid.Column="0" Click="Seleciona_paciente"/>
+                        <Label x:Name="Sai_Nome_paciente" Grid.Column="1" Grid.Row="0" Content="Nome Selecionado: " Grid.ColumnSpan="2"/>
+                        <ListView x:Name="Ent_Lista_Pacientes"  Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
+                        <Button x:Name="Novo_paciente" Grid.Row="1" Grid.Column="1" Content="Novo Paciente" Click="Novo_paciente_Click"/>
+                        <TextBlock x:Name="Sai_Medicoes" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </TabItem>
+        <TabItem Header="Captura">
+            <Grid Margin="100,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="74*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+            <sharpGL:OpenGLControl 
+            Name="openGLControl" OpenGLDraw="openGLControl_OpenGLDraw" 
+            OpenGLInitialized="openGLControl_OpenGLInitialized" Resized="openGLControl_Resized"
+            DrawFPS="True" RenderContextType="FBO" FrameRate="30" Grid.RowSpan="3" Margin="28,0,0,0"/>                
+                <Label Content="Nível de Bateria" HorizontalAlignment="Left" Margin="-100,231,0,0" VerticalAlignment="Top" Height="29"/>
+                <ProgressBar x:Name="NvBateria" HorizontalAlignment="Left" Height="27" Margin="-99,260,0,0" VerticalAlignment="Top" Width="122" Maximum="200"/>
+                <Button x:Name="Ativador"  Content="Ativar" HorizontalAlignment="Left" Margin="-95,36,0,0" VerticalAlignment="Top" Width="118" Click="Ativador_Click" IsEnabled="False" Height="26"/>
+                <Button x:Name="Buscador" Content="Procurar Balanca" HorizontalAlignment="Left" Margin="-95,0,0,0" VerticalAlignment="Top" Width="118" Click="Buscador_Click" Height="31"/>
+                <Label x:Name="Massa_Total" Content="" HorizontalAlignment="Left" Margin="-95,67,0,0" VerticalAlignment="Top" Width="87"/>
+                <Label x:Name="CGXLabel" Content="Label" HorizontalAlignment="Left" Margin="-45,87,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="CGYLabel" Content="Label" HorizontalAlignment="Left" Margin="-45,113,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Calibrar" Content="Recalibrar" HorizontalAlignment="Left" Margin="-95,139,0,0" VerticalAlignment="Top" Width="118" Click="Calibrar_Click" Height="28"/>
+                <Label x:Name="Sai_Num_Capturas" Margin="-95,172,0,0" HorizontalAlignment="Left" Width="118" Height="23" VerticalAlignment="Top"/>
+                <Button x:Name="salve" Content="Salvar" HorizontalAlignment="Left" Margin="-95,200,0,0" VerticalAlignment="Top" Width="118" Click="salve_Click" Height="26"/>
+                <Label Content="CG X" HorizontalAlignment="Left" Margin="-99,87,0,0" VerticalAlignment="Top"/>
+                <Label Content="CG Y" HorizontalAlignment="Left" Margin="-99,113,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Sel_Pasta" Content="Selecionar Pasta" HorizontalAlignment="Left" Margin="-100,292,0,0" VerticalAlignment="Top" Width="123" Height="26" Click="folderSel_Click"/>
+                <TextBox x:Name="NomeEdit" HorizontalAlignment="Left" Margin="-100,323,0,0" VerticalAlignment="Top" Width="123" Height="26" TextChanged="TextChange"/>
+                <Label x:Name="Endereco" HorizontalAlignment="Left" Margin="-100,354,0,0" VerticalAlignment="Top" Width="123"/>
+            </Grid>
+            </TabItem>
+        
+            <TabItem Header="Leitura">
+            <Grid Margin="100,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="44"/>
+                </Grid.RowDefinitions>
+                <ComboBox x:Name="TipoGrafico" Text="Tipo de Gráfico" HorizontalAlignment="Left" Height="26" Margin="-95,36,0,100" VerticalAlignment="Top" Width="90" SelectionChanged="TipoGrafico_SelectionChanged">
+                    <ComboBoxItem Content="Geométrico (Centro de gravidade)"/>
+                    <ComboBoxItem Content="Linear (Centro de gravidade)"/>
+                    <ComboBoxItem Content="Massas por sensor"/>
+                </ComboBox>
+                <sharpGL:OpenGLControl 
+                Name="Grafico" OpenGLDraw="Grafico_OpenGLDraw" MouseWheel="Zoom" MouseRightButtonDown="Grafico_MouseRightButtonDown_1"
+                OpenGLInitialized="Grafico_OpenGLInitialized" Resized="Grafico_Resized" 
+                DrawFPS="False" RenderContextType="FBO" FrameRate="15" Margin="0,0,0,58" MouseMove="Grafico_MouseMove" />
+                <Button x:Name="Abrir" Content="Abrir aquivo" HorizontalAlignment="Left" Margin="-95,0,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="Abrir_Click"/>
+                <CheckBox x:Name="CBtraco0" Content="Linha 1" HorizontalAlignment="Left" Height="16" Margin="-95,71,0,0" VerticalAlignment="Top" Width="90" />
+                <ComboBox x:Name="CorTraco0" HorizontalAlignment="Left" Height="23" Margin="-95,92,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="CorTraco_SelectionChanged">
+                    <ComboBoxItem Content="Branco"/>
+                    <ComboBoxItem Content="Amarelo"/>
+                    <ComboBoxItem Content="Azul"/>
+                    <ComboBoxItem Content="Cinza"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Verde"/>
+                    <ComboBoxItem Content="Vermelho"/>
+                    <ComboBoxItem Content="Ciano"/>
+                    <ComboBoxItem Content="Laranja"/>
+                </ComboBox>
+                <CheckBox x:Name="CBtraco1" Content="Linha 2" HorizontalAlignment="Left" Height="16" Margin="-95,121,0,0" VerticalAlignment="Top" Width="90"/>
+                <ComboBox x:Name="CorTraco1" HorizontalAlignment="Left" Height="23" Margin="-95,142,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="CorTraco_SelectionChanged">
+                    <ComboBoxItem Content="Branco"/>
+                    <ComboBoxItem Content="Amarelo"/>
+                    <ComboBoxItem Content="Azul"/>
+                    <ComboBoxItem Content="Cinza"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Verde"/>
+                    <ComboBoxItem Content="Vermelho"/>
+                    <ComboBoxItem Content="Ciano"/>
+                    <ComboBoxItem Content="Laranja"/>
+                </ComboBox>
+                <CheckBox x:Name="CBtraco2" Content="Linha 3" HorizontalAlignment="Left" Height="16" Margin="-95,168,0,0" VerticalAlignment="Top" Width="90"/>
+                <ComboBox x:Name="CorTraco2" HorizontalAlignment="Left" Height="23" Margin="-95,189,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="CorTraco_SelectionChanged">
+                    <ComboBoxItem Content="Branco"/>
+                    <ComboBoxItem Content="Amarelo"/>
+                    <ComboBoxItem Content="Azul"/>
+                    <ComboBoxItem Content="Cinza"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Verde"/>
+                    <ComboBoxItem Content="Vermelho"/>
+                    <ComboBoxItem Content="Ciano"/>
+                    <ComboBoxItem Content="Laranja"/>
+                </ComboBox>
+                <CheckBox x:Name="CBtraco3" Content="Linha 4" HorizontalAlignment="Left" Height="16" Margin="-95,217,0,0" VerticalAlignment="Top" Width="90"/>
+                <ComboBox x:Name="CorTraco3" HorizontalAlignment="Left" Height="23" Margin="-95,238,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="CorTraco_SelectionChanged">
+                    <ComboBoxItem Content="Branco"/>
+                    <ComboBoxItem Content="Amarelo"/>
+                    <ComboBoxItem Content="Azul"/>
+                    <ComboBoxItem Content="Cinza"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Verde"/>
+                    <ComboBoxItem Content="Vermelho"/>
+                    <ComboBoxItem Content="Ciano"/>
+                    <ComboBoxItem Content="Laranja"/>
+                </ComboBox>
+                <CheckBox x:Name="CBtraco4" Content="Linha 5" HorizontalAlignment="Left" Height="16" Margin="-95,265,0,0" VerticalAlignment="Top" Width="90" />
+                <ComboBox x:Name="CorTraco4" HorizontalAlignment="Left" Height="23" Margin="-95,286,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="CorTraco_SelectionChanged">
+                    <ComboBoxItem Content="Branco"/>
+                    <ComboBoxItem Content="Amarelo"/>
+                    <ComboBoxItem Content="Azul"/>
+                    <ComboBoxItem Content="Cinza"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Verde"/>
+                    <ComboBoxItem Content="Vermelho"/>
+                    <ComboBoxItem Content="Ciano"/>
+                    <ComboBoxItem Content="Laranja"/>
+                </ComboBox>
+                <ComboBox x:Name="LinhaBase" HorizontalAlignment="Left" Height="23" Margin="-95,315,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="MudarBase">
+                    <ComboBoxItem Content="Selecionar Linha"/>
+                    <ComboBoxItem Content="Linha 1"/>
+                    <ComboBoxItem Content="Linha 2"/>
+                    <ComboBoxItem Content="Linha 3"/>
+                    <ComboBoxItem Content="Linha 4"/>
+                    <ComboBoxItem Content="Linha 5"/>
+                </ComboBox>
+                <Button x:Name="resetZoom" Content="Restaurar" HorizontalAlignment="Left" Margin="-95,444,0,0" Width="90" Click="resetZoom_Click" Height="25" VerticalAlignment="Top"/>
+                <Label x:Name="numFrames" Content="Lidos" HorizontalAlignment="Left" Margin="-95,409,0,0" Width="90" Height="30" VerticalAlignment="Top"/>
+                <Label x:Name="espLinha" Content="Espessura: " HorizontalAlignment="Left" Margin="-95,340,0,0" Width="90" Height="30" VerticalAlignment="Top"/>
+                <Slider x:Name="espessuraLinha" HorizontalAlignment="Left" Margin="-95,375,0,0" Width="90" ValueChanged="espessuraLinha_ValueChanged_1" Maximum="20" SmallChange="1 " Minimum="1" LargeChange="3" Value="1" Cursor="Arrow" ToolTip="Espessura da linha" Height="29" VerticalAlignment="Top"/>
+                <Label x:Name="pontoX" Content="X: " HorizontalAlignment="Left" Margin="-95,469,0,0" Width="90" Height="30" VerticalAlignment="Top"/>
+                <Label x:Name="pontoY" HorizontalAlignment="Left" Margin="-95,496,0,0" Width="90" Height="30" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Texto_Teste" HorizontalAlignment="Left" Margin="-98,516,0,60" Width="90"/>
+                <TabControl x:Name="tabFiltros" HorizontalAlignment="Stretch" Height="97" Margin="-95,0,0,0" Grid.RowSpan="2" VerticalAlignment="Bottom" Width="1035">
+                    <TabItem Header="Média Simples">                        
+                        <Grid>
+                            <Label Content="Filtro da Média Simples: Cada ponto é a média dos N pontos anteriores, suavisa a função mas causa atraso no sinal" Margin="5,-4,5,26"/>
+                            <Label x:Name="labelN" Content="N = " Margin="5,25,5,0"/>
+                            <Slider x:Name="sliderMediaSimples" Margin="66,26,0,3" SmallChange="1" LargeChange="10" ValueChanged="sliderMediaSimples_ValueChanged_1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Média bidirecional">
+                        <Grid Margin="0,5,3,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="433*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="455*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="34*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Filtro da Média Bidirecional: Cada ponto é a média dos Na pontos anteriores e dos Np pontos posteriores." Grid.Row="0"   Margin="0,-2,0,2"/>
+                            <Label x:Name="labelNa2" HorizontalAlignment="Stretch" Content="Na = " Grid.Row="1" Grid.Column="0"/>
+                            <Slider x:Name="sliderMediaBid1" HorizontalAlignment="Stretch" SmallChange="1" LargeChange="10" ValueChanged="sliderMediaBid1_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Grid.Row="1" Grid.Column="1"/>
+                            <Label x:Name="labelNp2" Content="Np = " Grid.Row="1" Grid.Column="2" Margin="0,0,1,0" HorizontalAlignment="Stretch"/>
+                            <Slider x:Name="sliderMediaBid2"  SmallChange="1" LargeChange="10" ValueChanged="sliderMediaBid2_ValueChanged" HorizontalAlignment="Stretch" IsSnapToTickEnabled="True" TickFrequency="1" Grid.Row="1" Grid.Column="3"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Savitzky-Golay">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="29*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="36*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="36*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="93*"/>
+                                <ColumnDefinition Width="573*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="34*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Ajuste polinomial, utiliza o método dos mínimos quadrados como filtro. Utiliza N pontos anteriores e M posteriores para elaborar uma curva de grau K com I pontos de interpolação." Grid.Row="0" HorizontalAlignment="Stretch" Grid.ColumnSpan="10"/>
+                            <Label Content="N = " Grid.Row="1" Grid.Column="0"/>
+                            <Label Content="M = " Grid.Row="1" Grid.Column="2"/>
+                            <Label Content="K = " Grid.Row="1" Grid.Column="4"/>
+                            <Label Content="I = " Grid.Row="1" Grid.Column="6"/>
+                            <TextBox x:Name="SGN" PreviewTextInput="So_Numeros" Grid.Row="1" Grid.Column="1" />
+                            <TextBox x:Name="SGM" PreviewTextInput="So_Numeros" Grid.Row="1" Grid.Column="3" />
+                            <TextBox x:Name="SGK" PreviewTextInput="So_Numeros" Grid.Row="1" Grid.Column="5" />
+                            <TextBox x:Name="SGI" PreviewTextInput="So_Numeros" Grid.Row="1" Grid.Column="7" />
+                            <Button x:Name="AplicarSG" Grid.Row="1" Grid.Column="8" Content="Aplicar Filtro" Click="AplicarSG_Click" />
+                            <Label x:Name="ErroGolay" Content="Aguardando comandos" VerticalAlignment="Center" Grid.Row="1" Grid.Column="9" Margin="0,5" Height="26"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Butterworth" x:Name="ButterTab">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="74*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="837*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="44*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Frequência" VerticalAlignment="Top" Height="25" />
+                            <xctk:IntegerUpDown x:Name="upDownFreq" Grid.Column="1" Minimum="1" Maximum="2000"/>
+                            <Button x:Name="AplicarButter" Content="Aplicar" Click="AplicarButter_Click_1" Grid.Column="2"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>            
+        </TabItem>
+        <TabItem Header="Testes">
+            <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock x:Name="testes" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AllowDrop="True"/>
+            </ScrollViewer>
+        </TabItem>
+        </TabControl>
+
+</Window>
